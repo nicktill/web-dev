@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="javaScriptLab.js"></script>
+    <script>
+        // the quadratic equation function 
+        const y = (a, b, c, x) => ((a * x) ** 2) + (b * x) + c;
+        // generates the x and y arrays for the plot based on the  
+        // coefficients a, b, and c for the x-axis range of xMin and xMax 
+        const generateDataForPlotting = (a, b, c, xMin, xMax) => {
+            var xArray = new Array(100);
+            var yArray = new Array(100);
+            // enter code here must use function y above
+            //loop from xMin to xMax, saving values into xArray and yArray accordingly
+            var i = 0;
+            let deltaX = (xMax - xMin) / 20;
+            for (let x = xMin; x <= xMax; x += deltaX) {
+                xArray[i] = x;
+                yArray[i] = y(a, b, c, x);
+                i++;
+            }
+            return [xArray, yArray];
+        }
+
+        // prompts the user to enter the coefficients a, b, and  
+        // c separated by comma 
+        var getCoefficients = () => {
+            //save string value into coeValues
+            var coeValues = prompt("Enter Coeffecients a,b,c");
+            //create coeArray and save the split indices of a b c into it
+            var coeArray = coeValues.split(","); //save split array into coeArray
+            var newArray = new Array();
+            for (i in coeArray) {
+                newArray[i] = parseFloat(coeArray[i]);
+            }
+            return newArray; //return the coefficients array
+            // return [a, b, c];
+        }
+
+        // the main drive of this script 
+        main = () => {
+            var [a, b, c] = getCoefficients();
+            const [xMin, xMax] = computeMinXAndMaxX(a, b, c);
+            const [xArray, yArray] = generateDataForPlotting(a, b, c, xMin, xMax);
+
+            // Define the plot Data 
+            var plotData = [{
+                x: xArray,
+                y: yArray,
+                mode: "markers"
+            }];
+
+            // SET TITLE HERE
+            var layout = {
+                xaxis: { title: "x-Axis" },
+                yaxis: { title: "y-Axis" },
+                title: `Quadratic Equation for ${a}x^2+ ${b}x + ${c}`
+            };
+
+            var config = { responsive: true };
+
+            // Create graph using Plotly and return it 
+            return Plotly.newPlot("myPlot", plotData, layout, config);
+        }
+
+    </script>
+</head>
+
+<body>
+    <div id="myPlot" style="width:90%; height: 400px; max-width:700px">
+        <script type="text/javascript"> main(); </script>
+    </div>
+</body>
+
+</html>

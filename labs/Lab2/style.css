@@ -1,5 +1,53 @@
+/* laptop */
+@media(min-width: 700px) {
+    #home-menu h2{
+        background-image: url(images/menu-head.png);
+    }
+    /* featured list items should be 42% width */
+    #home-menu li{
+        width: 42%;    
+    }
+    /* featured list items should be 23% width */
+    #featured li{
+        width: 23%;
+    }
 
-body{
+}
+
+/* tablet */
+@media(max-width: 700px) {
+    /* medium image */
+    #home-menu h2{
+        background-image: url(images/menu-head-small.png);
+    }
+    /* menu list items should be 92% width */
+    #home-menu li{
+       width: 92%; 
+
+    }
+    /* featured list items should be 42% width */
+    #featured li{
+       width: 42%;
+    }
+}
+
+/* smartphone */
+@media(max-width: 400px) {
+    /* image should be smallest image */
+    #home-menu h2{
+        background-image: url(images/menu-head-smallest.png);
+    }
+    /* menu items should be 92% width */
+    #home-menu li{
+       width: 92%;
+    }
+    /* featured items 92% width */
+    #featured li{
+       width: 92%;
+    }
+}
+
+    body{
     font-family: Georgia;
     margin: 0;
 }
@@ -50,7 +98,6 @@ header nav li a{
 }
 
 #home-menu h2{
-    background-image: url(images/menu-head.png);
     background-repeat: no-repeat;
     width: 156px;
     height: 74px;
@@ -73,13 +120,13 @@ header nav li a{
 
 #home-menu li{
     float: left;
-    width: 42%;
     padding: 0;
-    margin: 20px 0 20px 8%;
+    margin: 20px 0 20px 0%;
 }
 
 #home-menu li:nth-child(odd){
     margin: 20px 8% 20px 0;
+
 }
 
 .dish{
@@ -124,7 +171,6 @@ header nav li a{
 
 #featured li{
     float: left;
-    width: 23%;
     margin: 1%;
     list-style-type: none; 
 }
