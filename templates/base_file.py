@@ -1,4 +1,4 @@
-from flask import Flask, request, abort, url_for, redirect, session
+from flask import Flask, request, abort, url_for, redirect, session, render_template
 
 app = Flask(__name__)
 
@@ -25,7 +25,7 @@ def login_controller():
 				abort(401)
 
 	# if all else fails, offer to log them in
-	return loginPage
+	return render_template("loginPage.html")
 
 @app.route("/profile/")
 @app.route("/profile/<username>")
@@ -42,9 +42,9 @@ def profile(username=None):
 	elif username in users:
 		# if specified, check to handle users looking up their own profile
 		if "username" in session and session["username"] == username:
-			return curProfile.format(url_for("unlogger"))
+			return render_template("curProfile.html")
 		else:
-			return otherProfile.format(username)
+			return render_template("otherProfile.html", name=username)
 			
 	else:
 		# cant find profile
@@ -56,7 +56,7 @@ def unlogger():
 	if "username" in session:
 		# note, here were calling the .clear() method for the python dictionary builtin
 		session.clear()
-		return logoutPage
+		return render_template("logoutPage.html")
 	else:
 		return redirect(url_for("login_controller"))
 
