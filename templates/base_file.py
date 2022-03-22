@@ -4,57 +4,6 @@ app = Flask(__name__)
 
 users = {"alice":"qwert", "bob":"asdfg", "charlie":"zxcvb"}
 
-loginPage = """<!DOCTYPE html>
-<html>
-	<head>
-		<title>Basic form</title>
-	</head>
-	<body>
-		<form action="" method="post">
-			Username:  <input type="text" name="user" />
-			<br />
-			Password:  <input type="text" name="pass" />
-			<br />
-			<input type="submit" value="submit" />
-		</form>
-	</body>
-</html>
-"""
-
-curProfile = """<!DOCTYPE html>
-<html>
-	<head>
-		<title>Your profile!</title>
-	</head>
-	<body>
-		Welcome back!
-		<a href="{}">click here to logout</a>
-	</body>
-</html>
-"""
-
-otherProfile = """<!DOCTYPE html>
-<html>
-	<head>
-		<title>{0}'s profile!</title>
-	</head>
-	<body>
-		This is {0}'s profile page.
-	</body>
-</html>
-"""
-
-logoutPage = """<!DOCTYPE html>
-<html>
-	<head>
-		<title>Logged out</title>
-	</head>
-	<body>
-		You have successfully been logged out!
-	</body>
-</html>
-"""
-
 # by default, direct to login
 @app.route("/")
 def default():
