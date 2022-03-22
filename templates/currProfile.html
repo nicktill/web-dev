@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html>
+{% extends "basePage.html" %}
 
-<head>
-    <title>Your profile!</title>
-</head>
+{% block title %} Your Profile! - {{ super() }} {% endblock %}
 
-<body>
-    Welcome back!
-    <a href="{{url_for('unlogger')}}">click here to logout</a>
-</body>
-
-</html>
+{% block body %} This is your very own profile! {% endblock %}
