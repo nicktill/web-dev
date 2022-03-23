@@ -1,5 +1,14 @@
 {% extends "basePage.html" %}
 
-{% block title %} Your Profile! - {{ super() }} {% endblock %}
+{% block title %} Login Page! - {{ super() }} {% endblock %}
 
-{% block body %} This is your very own profile! {% endblock %}
+{% block body %}
+
+<form action="" method="post">
+    Username: <input type="text" name="user" />
+    <br>
+    Password: <input type="text" name="pass" />
+    <br>
+</form>
+
+{% endblock %}

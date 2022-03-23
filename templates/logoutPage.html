@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html>
+{% extends "basePage.html" %}
 
-<head>
-    <title>Logged out</title>
-</head>
+{% block title %} Logged Out! - {{ super() }} {% endblock %}
 
-<body>
-    You have successfully been logged out!
-</body>
-
-</html>
+{% block body %} You have succesfully logged out! {% endblock %}

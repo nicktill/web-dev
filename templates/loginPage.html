@@ -1,18 +1,9 @@
-<!DOCTYPE html>
-<html>
+{% extends "basePage.html" %}
 
-<head>
-    <title>Basic form</title>
-</head>
+{% block title %} Login Page! - {{ super() }} {% endblock %}
 
-<body>
-    <form action="" method="post">
-        Username: <input type="text" name="user" />
-        <br />
-        Password: <input type="text" name="pass" />
-        <br />
-        <input type="submit" value="submit" />
-    </form>
-</body>
+{% block body %}
+Username: {{name}}
+Password: {{password}}
 
-</html>
+{% endblock %}

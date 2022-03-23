@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html>
+{extends "basePage.html" %}
 
-<head>
-    <title>{{name}}'s profile!</title>
-</head>
+{% block title %} {{name}}'s profile! - {{ super() }} {% endblock %}
 
-<body>
-    This is {{name}}'s profile page.
-</body>
-
-</html>
+{% block body %} This is {{name}}'s profile! {% endblock %}
