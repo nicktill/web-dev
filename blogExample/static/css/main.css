@@ -1,0 +1,25 @@
+body {
+	margin: auto;
+	font-family: sams-serif;
+	text-align: center;
+}
+
+h1 {
+	color: orange;
+	text-align: center;
+}
+
+table, th, td {
+	border: 1px solid;
+	margin: auto;
+}
+
+th, td {
+	min-width: 100px;
+	text-align: center;
+}
+
+form {
+	padding-top: 20px;
+	display: inline-block;
+}
