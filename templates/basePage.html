@@ -2,14 +2,16 @@
 <html>
 
 <head>
-    <title> {% block title %} loginForm! {% endblock %}</title>
+    <title>{% block title %}loginForm!{% endblock %}</title>
 </head>
 
 <body>
     {% if username %}
-    logged in as {{ username }}, <a href="{{ url_for('logger) }}"> Click to logout</a>
+    Logged in as {{ username }}, <a href="{{ url_for(" unlogger") }}">click here to logout</a>
+    <br />
+    <br />
     {% endif %}
-    {% block body%}
+    {% block body %}
     {% endblock %}
 </body>
 
