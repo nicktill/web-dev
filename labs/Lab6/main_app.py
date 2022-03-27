@@ -9,7 +9,7 @@ aboutUsPage = """
 	<h1> About Us </h1>
     <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <p>
     <br></br>
-    <a href="http://127.0.0.1:5000">Back to Home Page</a>
+    <a href="{}">Back To Home Page</a>
 </html>
 """
 
@@ -28,7 +28,7 @@ contactUsPage = """
 			<input type="submit" value="submit" />
 		</form>
 	</body>
-    <a href="http://127.0.0.1:5000">Back to Home Page</a>
+    <a href="{}">Back To Home Page</a>
 </html>
 """
 
@@ -43,9 +43,9 @@ landingPage = """
         <li> Pitt ID: nit36 </li>
     </ul>
     <body>
-        <a href=http://127.0.0.1:5000/contact>Contact Us</a>
+        <a href="{}">About Us</a>
         <br></br>
-        <a href="http://127.0.0.1:5000/about">About Us</a>
+        <a href="{}">Contact Us</a>
     </body>
 </html>
 """
@@ -56,7 +56,7 @@ showUser = """
 	<h1> Thanks, {} </h1>
     <h1> Your request has been submitted </h1>
     <h1> We will contact you via {} </h1>    
-    <a href="http://127.0.0.1:5000">Back to Home Page</a>
+    <a href="{}">Back To Home Page</a>
 </html>
 """
 
@@ -65,33 +65,34 @@ errorPage = """
 <html>
 	<h1> Error Page </h1>
     <h1> Your request has failed, you are trying to reach the sent request manually (GET) </h1>
-    <a href="http://127.0.0.1:5000/contact" Try Again</a>
+    <a href="{}">Try Again</a>
     
 </html>
 """
 
+
 @app.route("/", methods=["GET", "POST"])
 def default():
-    return landingPage
+    return landingPage.format('about', "contact")
+
 
 @app.route("/notificationSent", methods=["GET", "POST"])
 def notificationSent():
     if request.method == 'POST':
-        return showUser.format(request.form["customerName"], request.form["customerEmail"])
+        return showUser.format(request.form["customerName"], request.form["customerEmail"], '/')
     else:
-        return errorPage
-    
+        return errorPage.format('contact')
+
+
 @app.route("/about", methods=["GET", "POST"])
 def about():
-    return aboutUsPage
+    return aboutUsPage.format('/')
+
 
 @app.route("/contact", methods=["GET", "POST"])
 def contact():
-    return contactUsPage
+    return contactUsPage.format('/')
 
 
 if __name__ == "__main__":
-	app.run(debug=True)
-
-
-
+    app.run(debug=True)
