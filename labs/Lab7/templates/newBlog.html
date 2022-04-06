@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Index page</title>
+{% endblock %}
+
+{% block body %}
+<div class="inlineBlock" id=“content”>
+    <h1><em>CS-1520 Blog Corner </em> </h1>
+    <a class="paddingDiv" href="/">Home</a>
+    <a class="paddingDiv button" href="/new-blog">New Blog</a>
+</div>
+<h2 class="addNewBlog paddingDiv">add a new blog</h2><br>
+<form action="/" method="POST">
+    <label for="blogTitle">Title:</label>
+    <input class="marginBottom" type="text" name="blogTitle" id="blogTitle">
+    <br>
+    <label for="blogAuthor">Author:</label>
+    <input class="marginBottom" type="text" name="blogAuthor" id="blogAuthor">
+    <br>
+    <label class="marginBottom" for="blogContent">Content:</label>
+    <input type="text" name="blogContent" id="blogContent">
+    <br>
+    <input class="center button marginTop" type="submit" value="Add Blog">
+</form>
+{% endblock %}

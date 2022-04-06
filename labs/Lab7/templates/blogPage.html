@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Index page</title>
+{% endblock %}
+
+{% block body %}
+<div class="inlineBlock" id=“content”>
+    <h1 class=""><em>CS-1520 Blog Corner </em> </h1>
+    <a class="paddingDiv" href="/">Home</a>
+    <a class="paddingDiv button" href="/new-blog">New Blog</a>
+</div>
+
+{% if blogId %}
+<div class="inlineBlock">
+    <h1 class="title"> {{ blogId.title }} <a href="/blog/{{blogId.id}}"></a></h1>
+    <h2 class="author"> {{ blogId.author }} <a href="/blog/{{ blogId.id }}"></a></h2>
+    <p class="content"> {{ blogId.content }} <a href="/blog/{{ blogId.id }}"></a></p>
+    {% endif %}
+    <a class="button" href="/delete/{{blogId.id}}">Delete</a>
+</div>
+{% endblock %}
+
+<!-- DISPLAY OF template blog (NOT USING JINJA TEMPLATES) -->
+<!-- <div class="fontSize">
+    <h1 class="alignItemsLeft redBoldItalic">Title Of Blog </h1>
+    <h2 class="alignItemsLeft boldBlack">Written by Author</h2>
+    <p class="alignItemsLeft"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius vel cum doloremque nam
+        modi hic nulla voluptatibusmagni. Laborum laudantium modi odio tempora esse velit magnam quos. Fugiat, nobis
+        delectus. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus magnam, quas quis voluptate error
+        esse ut blanditiis nostrum, labore neque accusamus, aliquid delectus perspiciatis ea. Voluptatibus harum
+        nesciunt officia? Veniam.</p>
+    <a class="alignItemsLeft button" href="/">Delete</a>
+</div> -->

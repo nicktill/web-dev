@@ -9,12 +9,15 @@ h1 {
 	text-align: center;
 }
 
-table, th, td {
+table,
+th,
+td {
 	border: 1px solid;
 	margin: auto;
 }
 
-th, td {
+th,
+td {
 	min-width: 100px;
 	text-align: center;
 }
