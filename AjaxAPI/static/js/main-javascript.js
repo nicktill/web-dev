@@ -12,9 +12,18 @@ function fetchListOfCountries() {
             console.log(data)
             let listOfCountries = getListOfCountries(data)
             initializeDropDown(listOfCountries)
-
         })
 }
+
+function getListOfCountries(data) {
+    let listOfCountries = [];
+    for (let i = 0; i < data.length; i++) {
+        listOfCountries.push(data[i].name.common)
+    }
+    return listOfCountries
+    console.log(listOfCountries);
+}
+
 function initializeDropDown(listOfCountries) {
     let options = "";
     for (let i = 0; i < listOfCountries.length; i++) {
