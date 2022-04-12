@@ -41,14 +41,14 @@ function displayCountryInfo(countryName) {
     fetch(url)
         .then(res => res.json())
         .then(data => {
-            document.getElementById("flag-container").src = "https://restcountries.com/name/";
-            document.getElementById("flag-container").alt = 'Flag of Banana Republic';
-            document.getElementById("capital").innerHTML = 'Coconut';
-            document.getElementById("population").innerHTML = '123456';
-            document.getElementById("currencies").innerHTML = 'Dolar';
-            document.getElementById("region").innerHTML = 'Americas';
-            document.getElementById("subregion").innerHTML = 'Latin America';
-            document.getElementById("googleMap").href = "https://goo.gl/maps/uDWEUaXNcZTng1fP6";
+            document.getElementById("flag-container").src = data[0].flags["png"];
+            document.getElementById("flag-container").alt = "Flag of " + data[0].name.common;
+            document.getElementById("capital").innerHTML = data[0].capital;
+            document.getElementById("population").innerHTML = data[0].population.toLocaleString("en-US")
+            document.getElementById("currencies").innerHTML = "text"
+            document.getElementById("region").innerHTML = data[0].region;
+            document.getElementById("subregion").innerHTML = data[0].subregion;
+            document.getElementById("googleMap").href = data[0].maps.googleMaps;
         })
         .catch(err => console.log("Error", err));
 
