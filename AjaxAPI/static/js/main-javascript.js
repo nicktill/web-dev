@@ -45,7 +45,11 @@ function displayCountryInfo(countryName) {
             document.getElementById("flag-container").alt = "Flag of " + data[0].name.common;
             document.getElementById("capital").innerHTML = data[0].capital;
             document.getElementById("population").innerHTML = data[0].population.toLocaleString("en-US")
-            document.getElementById("currencies").innerHTML = "text"
+            let countryCurrency = ""
+            for (var property in data.currencies) {
+                countryCurrency += data[0].currencies[property].name + "-" + data[0].currencies[property].symbol;
+            }
+            document.getElementById("currencies").innerHTML = countryCurrency;
             document.getElementById("region").innerHTML = data[0].region;
             document.getElementById("subregion").innerHTML = data[0].subregion;
             document.getElementById("googleMap").href = data[0].maps.googleMaps;
