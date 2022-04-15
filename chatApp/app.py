@@ -16,13 +16,22 @@ class userChatter(db.Model):
     email = db.Column(db.String(150), nullable=False)
 
 
-@app.route("/", methods=["GET", "POST"])
-def index():
+@app.route("/")
+def default():
+    return render_template("index.html")
+
+
+# @app.route("/login/", methods=["GET", "POST"])
+# def login_controller():
+
+
+@app.route("/register/", methods=["GET", "POST"])
+def register_controller():
     if request.method == 'POST':
         username_ = request.form['username']
         email_ = request.form['email']
         password_ = request.form['password']
-        rePassword_ = request.form['repassword']
+        rePassword_ = request.form['rePassword']
         addUserInfo = userChatter(
             username=(username_),
             email=(email_),
@@ -36,21 +45,12 @@ def index():
         except:
             return 'There was an issue adding your information to database'
     else:
-        return render_template("index.html")
+        return render_template('register.html')
 
+    return redirect('/')
 
-@app.route("/")
-def default():
-    return render_template("index.html")
-
-
-# @app.route("/login/", methods=["GET", "POST"])
-# def login_controller():
-
-
-@app.route("/register/", methods=["GET", "POST"])
-def register_controller():
-    return render_template("register.html")
+    # else:
+    #     return redirect('/')
 
 
 # @app.route("/profile/<username>")
