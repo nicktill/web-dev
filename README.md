@@ -1,14 +1,14 @@
-# CS1520 Web-Development @Univeristy of Pittsburgh 
+## CS1520 Web-Development @Univeristy of Pittsburgh 
 
 Code from Spring 2022 
-# Lab 1
+## Lab 1
 # HTML and CSS
 • General HTML file structure
 • Basic tags
 • ID and Class attributes
 • CSS selectors
 
-# Lab 2
+## Lab 2
 # Responsive Design:
 • The reasoning behind Responsive Web Design
 • Display size, Resolution, and Pixel Density
@@ -17,7 +17,7 @@ Code from Spring 2022
 • Building a one page that fits all devices
 • CSS media queries
 
-# Lab 3
+## Lab 3
 # Client-side Scripting using Javascript:
 • Reasoning behind using scripting
 • Compiled versus Interpreted languages
@@ -32,7 +32,7 @@ Code from Spring 2022
 • Objects
 • ECMA
 
-# Lab 4
+## Lab 4
 # The DOM and Event-driven programming:
 • Document methods:
 • The document.write
@@ -60,7 +60,7 @@ Code from Spring 2022
 • bubbling versus capturing
 • The this parameter in an event listener
 
-# Lab 5
+## Lab 5
 # Web Storage: 
 • Types of Web Storage:
 • Local Storage
@@ -82,7 +82,7 @@ Code from Spring 2022
 • Method to append more info on an existing cookie
 • Setting expiration date
 
-# Lab 6
+## Lab 6
 # Networking:
 • Host
 • Client and Server
@@ -100,7 +100,7 @@ Code from Spring 2022
 • The Transport Layer
 • The Application Layer
 
-# Lab 7
+## Lab 7
 # Server-side Programming: Flask
 • Introduction
 • Setup
